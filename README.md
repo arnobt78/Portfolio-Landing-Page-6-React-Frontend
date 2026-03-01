@@ -1,4 +1,4 @@
-# Portfolio Landing Page 6 - React, Vite, Tailwind Frontend Project
+# Portfolio Landing Page 6 - React, Vite, TailwindCSS Frontend Project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19.2.0-blue)](https://react.dev/)
