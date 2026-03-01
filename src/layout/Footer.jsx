@@ -14,7 +14,7 @@ const footerLinks = [
 ];
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear(); // Dynamic year for copyright
 
   return (
     <footer className="py-12 border-t border-border">

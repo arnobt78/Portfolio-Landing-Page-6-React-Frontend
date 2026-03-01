@@ -1,3 +1,6 @@
+/**
+ * Primary CTA button. Accepts size (sm | default | lg), optional className, and forwards other props (onClick, type, disabled, etc.) to the underlying <button>.
+ */
 export const Button = ({
   className = "",
   size = "default",
@@ -15,6 +18,7 @@ export const Button = ({
   const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
   return (
     <button className={classes} {...props}>
+      {/* Wrapper span keeps focus ring and layout consistent when mixing text + icons */}
       <span className="relative flex items-center justify-center gap-2">
         {children}
       </span>

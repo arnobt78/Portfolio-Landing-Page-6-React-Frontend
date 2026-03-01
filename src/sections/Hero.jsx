@@ -9,6 +9,15 @@ import {
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
+const DOT_COUNT = 30;
+/* Precomputed at module load so we don't call Math.random during render (keeps React render pure for lint) */
+const dotStyles = [...Array(DOT_COUNT)].map(() => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
+  animationDelay: `${Math.random() * 5}s`,
+}));
+
 const skills = [
   "React",
   "Next.js",
@@ -30,6 +39,7 @@ const skills = [
   "GitHub Actions",
 ];
 
+/** Full-viewport hero: headline, CTAs, profile image, skills marquee. Scroll hint links to #about. */
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -45,17 +55,13 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {dotStyles.map((style, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              ...style,
             }}
           />
         ))}
@@ -162,6 +168,7 @@ export const Hero = () => {
             Technologies I work with
           </p>
           <div className="relative overflow-hidden">
+            {/* Edge fades hide the seam where the duplicated marquee content loops */}
             <div
               className="absolute left-0 top-0 bottom-0 w-32
              bg-gradient-to-r from-background to-transparent z-10"
@@ -171,6 +178,7 @@ export const Hero = () => {
              bg-gradient-to-l from-background to-transparent z-10"
             />
             <div className="flex animate-marquee">
+              {/* Duplicate skills array so marquee can scroll -50% and loop seamlessly */}
               {[...skills, ...skills].map((skill, idx) => (
                 <div key={idx} className="flex-shrink-0 px-8 py-4">
                   <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">

@@ -1,3 +1,4 @@
+/** Timeline data; current: true shows a ping animation on the timeline dot */
 const experiences = [
   {
     period: "2022 — Present",
@@ -37,6 +38,7 @@ const experiences = [
   },
 ];
 
+/** Career timeline. Even/odd items alternate left/right on desktop (idx % 2); vertical line and dots in the middle. */
 export const Experience = () => {
   return (
     <section id="experience" className="py-32 relative overflow-hidden">
@@ -94,7 +96,7 @@ export const Experience = () => {
                   )}
                 </div>
 
-                {/* Content */}
+                {/* Alternate left/right: even idx = right column + text-right, odd = left column */}
                 <div
                   className={`pl-8 md:pl-0 ${
                     idx % 2 === 0

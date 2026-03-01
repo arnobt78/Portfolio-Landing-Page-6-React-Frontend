@@ -1,3 +1,7 @@
+/**
+ * Root layout component. Composes the single-page portfolio: fixed Navbar,
+ * main content (sections in scroll order), and Footer. No router—navigation uses #anchor links.
+ */
 import { Navbar } from "@/layout/Navbar";
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
@@ -12,6 +16,7 @@ function App() {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <main>
+        {/* Section order matches nav anchors: #about, #projects, #experience, #testimonials, #contact */}
         <Hero />
         <About />
         <Projects />

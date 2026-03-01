@@ -36,6 +36,7 @@ const testimonials = [
   },
 ];
 
+/** Carousel: activeIdx state, next/previous wrap with modulo so it cycles. Dots and arrows update activeIdx. */
 export const Testimonials = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 

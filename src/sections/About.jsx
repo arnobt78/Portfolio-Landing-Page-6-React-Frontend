@@ -1,5 +1,6 @@
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 
+/** Four value props shown as cards (Clean Code, Performance, Collaboration, Innovation) */
 const highlights = [
   {
     icon: Code2,
@@ -26,6 +27,7 @@ const highlights = [
   },
 ];
 
+/** About section: intro copy + mission quote; right column renders highlights as a 2x2 grid. id="about" for nav anchor. */
 export const About = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden">

@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+
 const projects = [
   {
     title: "Fintech Dashboard",
@@ -39,6 +40,7 @@ const projects = [
   },
 ];
 
+/** Featured work grid. Each card: image (scale on hover), overlay with live + GitHub links, tags. id="projects" for nav. */
 export const Projects = () => {
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
@@ -72,7 +74,7 @@ export const Projects = () => {
               className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
-              {/* Image */}
+              {/* Image zooms on card hover via group-hover:scale-110; overlay links appear on hover */}
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}

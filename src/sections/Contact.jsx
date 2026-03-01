@@ -31,6 +31,7 @@ const contactInfo = [
   },
 ];
 
+/** Contact form + info cards. Submits via EmailJS using VITE_* env vars; shows success/error message below form. */
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -49,6 +50,7 @@ export const Contact = () => {
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
     try {
+      /* All three must be set in .env for the form to work; see README for EmailJS setup */
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -137,12 +139,13 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}
@@ -188,6 +191,7 @@ export const Contact = () => {
                 )}
               </Button>
 
+              {/* Success or error message after submit; styled via submitStatus.type */}
               {submitStatus.type && (
                 <div
                   className={`flex items-center gap-3

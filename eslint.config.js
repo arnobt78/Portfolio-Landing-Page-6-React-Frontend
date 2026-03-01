@@ -1,3 +1,7 @@
+/**
+ * ESLint flat config: JS/JSX linting with React hooks and Vite React Refresh rules.
+ * varsIgnorePattern allows unused variables that start with uppercase or underscore (e.g. _ or React).
+ */
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'

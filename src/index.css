@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Tailwind v4 theme: custom design tokens. These map to Tailwind utilities (e.g. bg-primary, text-muted-foreground). */
 @theme {
   --color-background: #0f1418;
   --color-foreground: #f0f2f5;
@@ -24,6 +25,7 @@
 }
 
 @layer base {
+  /* Enables smooth scroll when clicking #anchor links (e.g. #about, #contact) */
   html {
     scroll-behavior: smooth;
   }
@@ -44,12 +46,14 @@
 }
 
 @layer components {
+  /* Glassmorphism: semi-transparent background + backdrop blur. Use for cards, nav, overlays. */
   .glass {
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
   }
 
+  /* Stronger glass effect for fixed header when scrolled */
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     backdrop-filter: blur(24px);
@@ -69,6 +73,7 @@
 }
 
 @layer utilities {
+  /* Fade-in from below with slight blur; used with .animate-fade-in and .animation-delay-* for staggered reveals */
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -82,6 +87,7 @@
     }
   }
 
+  /* Used by Hero green dots for subtle floating motion */
   @keyframes slow-drift {
     0%,
     100% {
@@ -108,6 +114,7 @@
     }
   }
 
+  /* Marquee: content is duplicated (skills + skills), so -50% loops seamlessly */
   @keyframes marquee {
     0% {
       transform: translateX(0);
@@ -157,6 +164,7 @@
     animation-delay: 800ms;
   }
 
+  /* SVG stroke dash animation for AnimatedBorderButton; runs on parent .group hover */
   @keyframes animated-border {
     0% {
       stroke-dashoffset: 400;

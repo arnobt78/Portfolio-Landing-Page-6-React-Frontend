@@ -2,6 +2,7 @@ import { Button } from "@/components/Button";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+/** Anchor targets for smooth scroll; must match section id attributes (e.g. id="about"). */
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
@@ -13,6 +14,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  /* Toggle glass background after user scrolls past 50px; cleanup listener on unmount */
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -58,6 +60,7 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
+        {/* Toggle opens/closes mobile menu; clicking a nav link closes it (see onClick on links below) */}
         <button
           className="md:hidden p-2 text-foreground cursor-pointer"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
