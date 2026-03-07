@@ -11,7 +11,12 @@ A modern, single-page portfolio template built with **React 19**, **Vite**, and 
 
 **Live Demo:** [https://portfolio-ui-6.vercel.app/](https://portfolio-ui-6.vercel.app/)
 
----
+<img width="1886" height="940" alt="Screenshot 2026-03-07 at 11 46 37" src="https://github.com/user-attachments/assets/2f05f2d2-9232-47bb-a711-6645eff4a954" />
+<img width="1866" height="709" alt="Screenshot 2026-03-07 at 11 46 51" src="https://github.com/user-attachments/assets/aaa4bba7-3c13-4431-88bc-448ded3ecd5e" />
+<img width="1855" height="847" alt="Screenshot 2026-03-07 at 11 47 03" src="https://github.com/user-attachments/assets/a784e656-48d3-4652-a70c-af34f1f47bbc" />
+<img width="1844" height="886" alt="Screenshot 2026-03-07 at 11 47 19" src="https://github.com/user-attachments/assets/c98034f6-e0f8-4c6a-80bb-49fcfed1b94d" />
+<img width="1820" height="765" alt="Screenshot 2026-03-07 at 11 47 36" src="https://github.com/user-attachments/assets/ad0bb327-9b69-448b-b0d8-91ce866959ef" />
+<img width="1842" height="859" alt="Screenshot 2026-03-07 at 11 47 54" src="https://github.com/user-attachments/assets/260a2ccc-33d8-482b-95ec-af737091199f" />
 
 ## Table of Contents
 
